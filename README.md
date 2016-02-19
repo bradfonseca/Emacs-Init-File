@@ -12,4 +12,4 @@ As much as possible I have tried to indicate clearly what changes I have made (a
 <elisp code here>
 ```
 
-I stil like :coffee:, :pizza:, Emacs, and wombats.
+I like :coffee:, :pizza:, Emacs, and wombats.
