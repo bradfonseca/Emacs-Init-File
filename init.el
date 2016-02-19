@@ -6,12 +6,33 @@
 ;;
 ;; Now, it resides as .emacs.d/init.el
 
+;; Configure before loading org mode (package-initialize)  
+(package-initialize)
+
 ;; FBF: Added with v. 24.3.1
 ;; adding "~/.emacs.d/lisp/" to load-path
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-;; as well as all sub-directories
-;;(let ((default-directory  "~/.emacs.d/lisp/"))
-;;  (normal-top-level-add-subdirs-to-load-path))
+;; adding "~/.emacs.d/org2blog-0.5/" to load-path
+(add-to-list 'load-path "~/.emacs.d/org2blog-0.5/")
+;; requiring org2blog to connect to WordPress
+(require 'org2blog-autoloads)
+;; configure connection to WordPress blog
+(setq org2blog/wp-blog-alist
+      '(("wordpress"
+         :url "https://bradfonseca.wordpress.com/xmlrpc.php"
+         :username "bradfonseca"
+         :default-title "Insert Title Here!"
+         :default-categories ("org2blog" "emacs")
+         :default-tags ("org2blog" "emacs")
+         :tags-as-categories nil)))
+
+;; FBF: Added with v. 24.3.1
+;; Want to enable shift select with Org mode
+(setq org-support-shift-select 'always)
+
+;; FBF: Added with v. 24.3.1
+;; enabling special formatting with Go language
+(require 'go-mode-autoloads)
 
 ;; Keep Emacs from executing file local variables.
 ;; (this is also in the site-init.el file loaded at emacs dump time.)
@@ -399,6 +420,14 @@ menu, add it to the menu bar."
 (defvaralias 'c-basic-offset 'tab-width)
 (defvaralias 'cperl-indent-level 'tab-width)
 
+;; FBF: added with v. 24.3.1
+;; Activating Org: Org-mode is a personal information management and outlining
+;; tool for Emacs.
+;; URL: http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
 ;; End of file.
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
