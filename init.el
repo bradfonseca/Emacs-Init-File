@@ -31,6 +31,11 @@
 (setq org-support-shift-select 'always)
 
 ;; FBF: Added with v. 24.3.1
+;; Adding some extra TODO states for Org mode
+(setq org-todo-keywords
+  '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
+
+;; FBF: Added with v. 24.3.1
 ;; enabling special formatting with Go language
 (require 'go-mode-autoloads)
 
