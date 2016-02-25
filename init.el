@@ -26,6 +26,15 @@
          :default-tags ("org2blog" "emacs")
          :tags-as-categories nil)))
 
+;; FBF: added with v. 24.3.1
+;; Activating Org: Org-mode is a personal information management and outlining
+;; tool for Emacs.
+;; URL: http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+
 ;; FBF: Added with v. 24.3.1
 ;; Want to enable shift select with Org mode
 (setq org-support-shift-select 'always)
@@ -429,24 +438,17 @@ menu, add it to the menu bar."
 (defvaralias 'c-basic-offset 'tab-width)
 (defvaralias 'cperl-indent-level 'tab-width)
 
-;; FBF: added with v. 24.3.1
-;; Activating Org: Org-mode is a personal information management and outlining
-;; tool for Emacs.
-;; URL: http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html
-(require 'org)
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
 ;; End of file.
+
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-todo-keywords (quote ((sequence "TODO(t)" "IN-PROGRESS(i)" "WAITING(w)" "DONE(d)")))))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
