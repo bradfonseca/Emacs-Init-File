@@ -36,6 +36,10 @@
   '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
 
 ;; FBF: Added with v. 24.3.1
+;; Automatically open "todo.org" when Emacs opens
+(find-file "~/org/todo.org")
+
+;; FBF: Added with v. 24.3.1
 ;; enabling special formatting with Go language
 (require 'go-mode-autoloads)
 
