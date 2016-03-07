@@ -31,8 +31,11 @@
 ;; tool for Emacs.
 ;; URL: http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html
 (require 'org)
+(setq org-mode 'always)
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
+(define-key global-map "\C-cc" 'org-capture)
+(define-key global-map "\C-cb" 'org-iswitchb)
 (setq org-log-done t)
 
 ;; FBF: Added with v. 24.3.1
@@ -45,8 +48,14 @@
   '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
 
 ;; FBF: Added with v. 24.3.1
-;; Automatically open "todo.org" when Emacs opens
-(find-file "~/org/todo.org")
+;; Automatically open "todo.org" when Emacs opens AND start on that buffer
+;; *also* inhibit "About Emacs" buffer
+;; Find "About Emacs" buffer in Help menu
+(setq initial-buffer-choice "~/org/todo.org")
+
+;; FBF: Added with v. 24.3.1
+;; Automatically open my org-agenda at start up.
+(org-agenda nil "a")
 
 ;; FBF: Added with v. 24.3.1
 ;; enabling special formatting with Go language
@@ -445,6 +454,7 @@ menu, add it to the menu bar."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-agenda-files (quote ("~/org/todo.org")))
  '(org-todo-keywords (quote ((sequence "TODO(t)" "IN-PROGRESS(i)" "WAITING(w)" "DONE(d)")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
