@@ -51,11 +51,16 @@
 ;; Automatically open "todo.org" when Emacs opens AND start on that buffer
 ;; *also* inhibit "About Emacs" buffer
 ;; Find "About Emacs" buffer in Help menu
+(setq inhibit-splash-screen t)
 (setq initial-buffer-choice "~/org/todo.org")
 
 ;; FBF: Added with v. 24.3.1
 ;; Automatically open my org-agenda at start up.
 (org-agenda nil "a")
+
+;; FBF: Added with v. 24.3.1
+;; To resolve export/publishing issue with LaTex
+(require 'org-latex)
 
 ;; FBF: Added with v. 24.3.1
 ;; enabling special formatting with Go language
